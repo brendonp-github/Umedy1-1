@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-sm-5">
+          <label for="name">Name</label>
+          <input type="text" id="name" formControlName="name" class="form-control" #inputName />
+          <span class="error" *ngIf="nameControl()?.touched && !nameControl()?.valid">Please enter a name</span>
+        </div>
+        <div class="col-sm-5">
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" formControlName="amount" class="form-control" #inputAmount />
+          <span class="error" *ngIf="amountControl()?.touched && !amountControl()?.valid">Please enter a valid amount</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid" >{{ (selectedID == null)? "Add" : "Save" }}</button>
+          <button class="btn btn-primary" type="button" [disabled]="selectedID == null" (click)="onDeleteClick()">Delete</button>
+          <button class="btn btn-default" type="button" (click)="onClearClick()">Clear</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

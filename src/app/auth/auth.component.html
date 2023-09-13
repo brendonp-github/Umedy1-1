@@ -1,0 +1,28 @@
+<div class="row" *ngIf="loading">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+</div>
+<div class="row" *ngIf="!loading">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">email</label>
+        <input type="text" id="email" formControlName="email" class="form-control" />
+        <span class="error" *ngIf="form.get('email')?.touched && !form.get('email')?.valid">Please enter an email</span>
+      </div>
+      <div class="form-group">
+        <label for="password">password</label>
+        <input type="password" id="password" formControlName="password" class="form-control" />
+        <span class="error" *ngIf="form.get('password')?.touched && !form.get('password')?.valid">Please enter an password</span>
+      </div>
+      <div>
+        <button type="button" class="btn btn-default" (click)="onSwitch()">Switch</button> |
+        <button type="submit" class="btn btn-default" [disabled]="!form.valid">{{ loginVisible? "Login" : "Sign Up" }}</button>
+      </div>
+      <div class="alert alert-danger" *ngIf="error != ''">
+        Error: {{ error }}
+      </div>
+    </form>
+  </div>
+</div>

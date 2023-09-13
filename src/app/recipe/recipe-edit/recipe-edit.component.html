@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-12">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row form-group">
+        <div class="col-md-12 form-group">
+          <label for="name">Name</label>
+          <input type="text" formControlName="name" class="form-control" />
+          <span class="error" *ngIf="form.get('name')?.touched && !form.get('name')?.valid">Please enter a name</span>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-12 form-group">
+          <label for="description">Description</label>
+          <input type="text" formControlName="description" class="form-control" />
+          <span class="error" *ngIf="form.get('description')?.touched && !form.get('description')?.valid">Please enter a description</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 form-group">
+          <label for="url">Image URL</label>
+          <input type="text" formControlName="imagePath" class="form-control" (keyup)="refreshDisplayedImage()" />
+          <span class="error" *ngIf="form.get('imagePath')?.touched && !form.get('imagePath')?.valid">Please enter a valid Image URL</span>
+        </div>
+        <div class="col-md-4">
+          <img class="img-responsive" *ngIf="displayedImagePath != ''" [src]="displayedImagePath" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12" formArrayName="ingredients">
+          <div class="row"
+               *ngFor="let ingredientCtrl of ingredientControls; let controlIndex = index"
+               [formGroupName]="controlIndex">
+            <div class="col-md-8">
+              <input type="text" class="form-control" formControlName="name" (keyup)="refreshIngredientValidity()" />
+              <span class="error" *ngIf="form.get('imagePath')?.touched && !form.get('imagePath')?.valid">Please enter a valid Image URL</span>
+            </div>
+            <div class="col-md-2">
+              <input type="number" class="form-control" formControlName="amount" (keyup)="refreshIngredientValidity()" />
+            </div>
+            <div class="col-md-2">
+              <input type="button" class="btn btn-danger" value="X" (click)="onDeleteIngredient(controlIndex)" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid || !ingredientControlsValid">{{ (selectedID === null)? "Add" : "Save" }}</button>
+          <button class="btn btn-default" type="button" (click)="onAddIngredient()">Add Ingredient</button>
+          <button class="btn btn-default" type="button" (click)="resetForm()">Clear</button>
+          <button class="btn btn-default" type="button" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

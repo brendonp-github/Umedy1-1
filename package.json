@@ -1,0 +1,46 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --ssl --ssl-cert %APPDATA%\\ASP.NET\\https\\%npm_package_name%.pem --ssl-key %APPDATA%\\ASP.NET\\https\\%npm_package_name%.key --host=127.0.0.1 --proxy-config src\\proxy.conf.js",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "prestart": "node aspnetcore-https"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^16.1.2",
+    "@angular/common": "^16.1.2",
+    "@angular/compiler": "^16.1.2",
+    "@angular/core": "^16.1.2",
+    "@angular/forms": "^16.1.2",
+    "@angular/platform-browser": "^16.1.2",
+    "@angular/platform-browser-dynamic": "^16.1.2",
+    "@angular/router": "^16.1.2",
+    "bootstrap": "^3.4.1",
+    "jest-editor-support": "*",
+    "rxjs": "~7.8.0",
+    "socket.io": "^4.7.2",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.13.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.1.0",
+    "@angular/cli": "~16.1.0",
+    "@angular/compiler-cli": "^16.1.2",
+    "@types/jasmine": "~4.3.0",
+    "eslint": "^8.48.0",
+    "jasmine-core": "~4.5.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "typescript": "~4.9.4"
+  },
+  "engines": {
+    "node": "18.10.0"
+  }
+}
