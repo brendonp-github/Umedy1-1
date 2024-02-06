@@ -5,22 +5,22 @@ Demonstration of Angular by Brendon Prasek, front end for the .Net backend: http
 
 Demo site running on https://udemy1.azurewebsites.net/ , login details below, please feel free to add some data.
 
-user@email.com
-zcdse$#gbdfwq3458765nJ
+* user@email.com
+* zcdse$#gbdfwq3458765nJ
 
-admin@email.com
-zcdse$#gbdfwq3458765nJ
+* admin@email.com
+* zcdse$#gbdfwq3458765nJ
 
 Technologies employed:
 * Angular
 * TypeScript
 * CI / CD directly to Azure App Service
 
-## Devcelopment Requirements
+## Development Requirements
 
-Node.JS
-Angular
-Visual Studio 2022
+* Node.JS
+* Angular
+* Visual Studio 2022
 
 ## Development server
 
