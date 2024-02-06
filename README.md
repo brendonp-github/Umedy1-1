@@ -1,6 +1,26 @@
-# Web
+# Umedy1-1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+## Overview
+Demonstration of Angular by Brendon Prasek, front end for the .Net backend: https://github.com/brendonp-github/TestAPI1
+
+Demo site running on https://udemy1.azurewebsites.net/ , login details below, please feel free to add some data.
+
+user@email.com
+zcdse$#gbdfwq3458765nJ
+
+admin@email.com
+zcdse$#gbdfwq3458765nJ
+
+Technologies employed:
+* Angular
+* TypeScript
+* CI / CD directly to Azure App Service
+
+## Devcelopment Requirements
+
+Node.JS
+Angular
+Visual Studio 2022
 
 ## Development server
 
